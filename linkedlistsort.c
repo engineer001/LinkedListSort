@@ -29,8 +29,9 @@ Node* initLinkedList()
 Node* sortLinkedList(Node* Linkedlist)
 {
   for(Node* p=Linkedlist->next;p->next!=NULL;p=p->next)
-    for(Node* q=p->next;q->next!=NULL;q=q->next)
+    for(Node* q=p;q->next!=NULL;)
     {
+      q=q->next;
       if((p->data)>(q->data))
       {
         int temp=p->data;
@@ -38,6 +39,7 @@ Node* sortLinkedList(Node* Linkedlist)
         q->data=temp;
       }
     }
+  return LinkedList;
 }
 
 // 打印链表中的整数
