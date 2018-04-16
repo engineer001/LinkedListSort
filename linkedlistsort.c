@@ -62,7 +62,7 @@ void delLinkedList(Node* Linkedlist)
   {
     Node* temp;
     temp=Linkedlist->next;
-    Linkedlist->next=->temp->next;
+    Linkedlist->next=temp->next;
     free(temp);
     temp=NULL;
   }
