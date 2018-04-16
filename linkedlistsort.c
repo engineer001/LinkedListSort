@@ -15,7 +15,7 @@ Node* initLinkedList()
   head->next=NULL;
   
   int temp;
-  while(scanf("%d",&temp)!=EOF)
+  while(scanf("%d",&temp)!=EOF)  //新行中输入Ctrl+Z，表示EOF
   {
     Node* node=(Node*)malloc(sizeof(Node));
     node->data=temp;
