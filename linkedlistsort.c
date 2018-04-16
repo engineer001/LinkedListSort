@@ -26,7 +26,7 @@ Node* initLinkedList()
 }
 
 // 链表中的整数冒泡排序，从小到大的顺序，仅改变整数顺序，不改变节点顺序
-Node* sortLinkedList(Node* Linkedlist)
+void sortLinkedList(Node* &Linkedlist)
 {
   for(Node* p=Linkedlist->next;p->next!=NULL;p=p->next)
     for(Node* q=p;q->next!=NULL;)
@@ -39,22 +39,40 @@ Node* sortLinkedList(Node* Linkedlist)
         q->data=temp;
       }
     }
-  return LinkedList;
+  return;
 }
 
 // 打印链表中的整数
 void printLinkedList(Node* Linkedlist)
 {
-   
+  Node* temp;
+  temp=Linkedlist->next;
+  
+  for(;temp->next!=NULL;)
+  {
+    temp=temp->next;
+    printf("%d ",temp->data);
+  }
 }
   
 // 释放链表空间
 void delLinkedList(Node* Linkedlist)
 {
-    
+  for(;Linkedlist->next!=NULL;)
+  {
+    Node* temp;
+    temp=Linkedlist->next;
+    Linkedlist->next=->temp->next;
+    free(temp);
+    temp=NULL;
+  }
 }
 
 int main()
 {
-  
+  Node* linkedlist=initLinkedList();
+  sortLinkedList(linkedlist);
+  printLinkedList(linkedlist);
+  delLinkedList(linkedlist);
+  linkedlist=NULL;
 }
